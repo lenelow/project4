@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
@@ -23,6 +23,8 @@ export default class App extends React.Component {
     );
   }
 }
+
+export default App;
 
 const styles = StyleSheet.create({
   intro: {

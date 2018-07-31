@@ -1,4 +1,10 @@
-import React from "react";
-import { createStackNavigation } from "react-native";
+import { createStackNavigator } from "react-navigation";
+import HomePage from "./components/HomePage";
+import HouseIndex from "./components/HouseIndex";
 
-export default createStackNavigation({});
+const App = createStackNavigator({
+  Home: { screen: HomePage },
+  Houses: { screen: HouseIndex }
+});
+
+export default App;

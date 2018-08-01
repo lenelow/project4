@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, AppRegistry } from "react-native";
 import { connect } from "react-redux";
+import { fetchAndHandleHouse } from "../actions/houses";
 
 class House extends Component {
+  static navigationOptions = {
+    title: "Name of Character"
+  };
   constructor(props) {
     super(props);
   }

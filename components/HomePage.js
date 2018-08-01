@@ -1,8 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
-class App extends React.Component {
+class HomePage extends React.Component {
+  static navigationOptions = {
+    title: "Home"
+  };
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         <View style={styles.intro}>
@@ -12,7 +16,10 @@ class App extends React.Component {
           </Text>
         </View>
         <View style={styles.container}>
-          <TouchableOpacity style={styles.button} onPress={this.onPress}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigate("Houses")}
+          >
             <Text> Who's Who? </Text>
           </TouchableOpacity>
           <View style={[styles.countContainer]}>
@@ -24,7 +31,7 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default HomePage;
 
 const styles = StyleSheet.create({
   intro: {
@@ -39,7 +46,7 @@ const styles = StyleSheet.create({
   },
   button: {
     alignItems: "center",
-    backgroundColor: "#DDDDDD",
+    backgroundColor: "#91AEBF",
     paddingHorizontal: 5,
     paddingVertical: 10
   },

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, AppRegistry } from "react-native";
 import { connect } from "react-redux";
 
 class House extends Component {
@@ -36,3 +36,5 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(House);
+
+AppRegistry.registerComponent("ASOIAF", () => House);

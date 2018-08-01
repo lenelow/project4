@@ -1,7 +1,13 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity
+} from "react-native";
 
-class HomePage extends Component {
+export default class HomePage extends Component {
   static navigationOptions = {
     title: "Home"
   };
@@ -31,8 +37,6 @@ class HomePage extends Component {
   }
 }
 
-export default HomePage;
-
 const styles = StyleSheet.create({
   intro: {
     flex: 1,
@@ -54,3 +58,5 @@ const styles = StyleSheet.create({
     color: "#FF00FF"
   }
 });
+
+AppRegistry.registerComponent("ASOIAF", () => HomePage);

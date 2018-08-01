@@ -8,6 +8,7 @@ import { createStore, applyMiddleware } from "redux";
 import reduxThunk from "redux-thunk";
 import reducers from "./reducers";
 import React, { Component } from "react";
+import { AppRegistry } from "react-native";
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 
@@ -18,7 +19,7 @@ const Routes = createStackNavigator({
   Character: { screen: Character }
 });
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <Provider store={createStoreWithMiddleware(reducers)}>
@@ -28,4 +29,4 @@ class App extends Component {
   }
 }
 
-export default App;
+AppRegistry.registerComponent("ASOIAF", () => App);

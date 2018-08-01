@@ -4,11 +4,11 @@ import {
   FlatList,
   View,
   Text,
-  ActivityIndicator,
-  TouchableHighlight,
-  ActionSheetIOS
+  AppRegistry,
+  TouchableHighlight
 } from "react-native";
 import { connect } from "react-redux";
+import { fetchAndHandleHouses } from "../actions/houses";
 
 class HouseIndex extends Component {
   constructor() {
@@ -16,7 +16,7 @@ class HouseIndex extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchAndHandlesHouses();
+    this.props.fetchAndHandleHouses();
   }
 
   render() {
@@ -26,13 +26,13 @@ class HouseIndex extends Component {
           ref="listRef"
           data={this.props.houses}
           renderItem={this.renderItem}
-          keyExtractor={(item, index) => index}
+          keyExtractor={index => index}
         />
       </View>
     );
   }
 
-  renderItem({ item, index }) {
+  renderItem({ item }) {
     return (
       <TouchableHighlight>
         <View>
@@ -54,3 +54,5 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(HouseIndex);
+
+AppRegistry.registerComponent("ASOIAF", () => HouseIndex);

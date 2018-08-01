@@ -37,7 +37,7 @@ class HouseIndex extends Component {
 
   renderItem({ item, index }) {
     return (
-      <TouchableHighlight>
+      <TouchableHighlight onPress={() => this.props.navigation("House")}>
         <View>
           <Text
             style={{

@@ -11,6 +11,9 @@ import { connect } from "react-redux";
 import { fetchAndHandleHouses } from "../actions/houses";
 
 class HouseIndex extends Component {
+  static navigationOptions = {
+    title: "Houses of Westeros"
+  };
   constructor() {
     super();
   }
@@ -21,7 +24,7 @@ class HouseIndex extends Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.list}>
         <FlatList
           ref="listRef"
           data={this.props.houses}
@@ -36,7 +39,15 @@ class HouseIndex extends Component {
     return (
       <TouchableHighlight>
         <View>
-          <Text>{item.name}</Text>
+          <Text
+            style={{
+              fontSize: 20,
+              textDecorationLine: "underline",
+              lineHeight: 30
+            }}
+          >
+            {item.name}
+          </Text>
         </View>
       </TouchableHighlight>
     );
@@ -54,5 +65,11 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(HouseIndex);
+
+const styles = StyleSheet.create({
+  list: {
+    marginLeft: 40
+  }
+});
 
 AppRegistry.registerComponent("ASOIAF", () => HouseIndex);

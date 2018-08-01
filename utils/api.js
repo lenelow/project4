@@ -13,7 +13,7 @@ class API {
     return this.api.get(`/houses/${id}`);
   }
   getHouses() {
-    return this.api.get("/houses");
+    return this.api.get("/houses?page=1&pageSize=20");
   }
 }
 

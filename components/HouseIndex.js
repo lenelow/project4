@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { connect } from "react-redux";
 import { fetchAndHandleHouses } from "../actions/houses";
+import Pagination from "./Pagination";
 
 class HouseIndex extends Component {
   static navigationOptions = {
@@ -31,6 +32,7 @@ class HouseIndex extends Component {
           renderItem={this.renderItem}
           keyExtractor={(item, index) => index}
         />
+        <Pagination />
       </View>
     );
   }

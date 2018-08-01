@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
-class HomePage extends React.Component {
+class HomePage extends Component {
   static navigationOptions = {
     title: "Home"
   };

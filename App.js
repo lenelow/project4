@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import reduxThunk from "redux-thunk";
 import reducers from "./reducers";
+import React, { Component } from "react";
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 
@@ -17,7 +18,7 @@ const Routes = createStackNavigator({
   Character: { screen: Character }
 });
 
-class App extends React.Component {
+class App extends Component {
   render() {
     return (
       <Provider store={createStoreWithMiddleware(reducers)}>

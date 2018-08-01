@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import {
   StyleSheet,
+  Text,
   FlatList,
   View,
-  Text,
   AppRegistry,
   TouchableHighlight
 } from "react-native";
@@ -26,13 +26,13 @@ class HouseIndex extends Component {
           ref="listRef"
           data={this.props.houses}
           renderItem={this.renderItem}
-          keyExtractor={index => index}
+          keyExtractor={(item, index) => index}
         />
       </View>
     );
   }
 
-  renderItem({ item }) {
+  renderItem({ item, index }) {
     return (
       <TouchableHighlight>
         <View>
@@ -44,7 +44,7 @@ class HouseIndex extends Component {
 }
 
 const mapStateToProps = ({ houses }) => ({
-  houses: houses.house
+  houses: houses.houses
 });
 
 const mapDispatchToProps = dispatch => ({

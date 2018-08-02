@@ -33,7 +33,7 @@ export default class HomePage extends Component {
             style={styles.LinearGradientStyle}
             start={{ x: 0, y: 1 }}
             end={{ x: 1, y: 0.9 }}
-            locations={[0, 0.6, 0.9]}
+            locations={[0.2, 0.6, 0.9]}
           >
             <Text style={styles.buttonText}>Who's Who?</Text>
           </LinearGradient>
@@ -55,17 +55,19 @@ const styles = StyleSheet.create({
     borderBottomWidth: -1
   },
   LinearGradientStyle: {
-    height: 40,
+    height: 20,
     paddingLeft: 15,
     paddingRight: 15,
     borderRadius: 5,
-    marginBottom: 20
+    marginVertical: 160,
+    flex: 1,
+    justifyContent: "center"
   },
   buttonText: {
-    fontSize: 18,
+    fontSize: 20,
     textAlign: "center",
     margin: 7,
-    color: "#fff",
+    color: "#280857",
     backgroundColor: "transparent"
   },
   title: {
@@ -73,7 +75,9 @@ const styles = StyleSheet.create({
   },
   TouchableOpacity: {
     flex: 1,
-    justifyContent: "center"
+    justifyContent: "center",
+    paddingVertical: 20,
+    paddingHorizontal: 20
   },
   text: {
     marginVertical: 30,

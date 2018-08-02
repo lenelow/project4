@@ -54,6 +54,24 @@ class HouseIndex extends Component {
       </View>
     );
   }
+
+  renderItem({ item, index }) {
+    return (
+      <TouchableHighlight onPress={() => this.props.navigation("House")}>
+        <View>
+          <Text
+            style={{
+              fontSize: 20,
+              textDecorationLine: "underline",
+              lineHeight: 30
+            }}
+          >
+            {item.name}
+          </Text>
+        </View>
+      </TouchableHighlight>
+    );
+  }
 }
 
 const mapStateToProps = ({ houses }) => ({

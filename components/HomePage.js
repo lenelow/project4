@@ -1,6 +1,12 @@
 import React, { Component } from "react";
-import { AppRegistry, StyleSheet, Text, View } from "react-native";
-import { Header, Container, Title, Button } from "native-base";
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View
+} from "react-native";
+import { Header, Container, Title } from "native-base";
 
 export default class HomePage extends Component {
   static navigationOptions = {
@@ -13,10 +19,17 @@ export default class HomePage extends Component {
         <Header>
           <Title style={styles.title}>ASOIAF</Title>
         </Header>
-        <Text>A Searchable Overview Involving All Families</Text>
-        <Button style={styles.button} onPress={() => navigate("Houses")}>
-          <Text> Who's Who? </Text>
-        </Button>
+        <Text style={styles.text}>
+          A Searchable Overview Involving All Families
+        </Text>
+        <View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigate("Houses")}
+          >
+            <Text style={styles.buttonText}> Who's Who? </Text>
+          </TouchableOpacity>
+        </View>
       </Container>
     );
   }
@@ -24,15 +37,25 @@ export default class HomePage extends Component {
 
 const styles = StyleSheet.create({
   button: {
-    alignItems: "center",
     backgroundColor: "#91AEBF",
-    marginLeft: 140,
-    marginTop: 150,
-    padding: 10
+    paddingVertical: 20,
+    alignItems: "center",
+    marginHorizontal: 45,
+    marginTop: 200,
+    marginBottom: -30,
+    borderRadius: 15
+  },
+  buttonText: {
+    fontSize: 22
   },
   title: {
     fontSize: 50,
-    paddingBottom: 30
+    marginBottom: -30
+  },
+  text: {
+    marginVertical: 30,
+    marginHorizontal: 27,
+    fontSize: 16
   }
 });
 

@@ -15,6 +15,13 @@ class House extends Component {
   }
 
   render() {
+    if (!this.props.house) {
+      return (
+        <View>
+          <Text>laoding</Text>
+        </View>
+      );
+    }
     return (
       <View>
         <Text>{this.props.house.name}</Text>
@@ -23,7 +30,7 @@ class House extends Component {
         <Text>{this.props.house.words}</Text>
         <Text>{this.props.house.currentLord}</Text>
         <Text>{this.props.house.heir}</Text>
-        <Text>{this.props.house.overlord.currentLord.name}</Text>
+        <Text>{this.props.house.overlord}</Text>
         <Text>{this.props.house.ancestralWeapons}</Text>
       </View>
     );
@@ -35,7 +42,7 @@ const mapStateToProps = ({ houses }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchAndHandleHouse: id => dispatch(fetchAndHandleHouse(id))
+  fetchAndHandleHouse: url => dispatch(fetchAndHandleHouse(url))
 });
 export default connect(
   mapStateToProps,

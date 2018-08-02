@@ -79,7 +79,7 @@ const mapStateToProps = ({ houses }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchAndHandleHouses: id => dispatch(fetchAndHandleHouses(id)),
+  fetchAndHandleHouses: () => dispatch(fetchAndHandleHouses()),
   setHouse: url => dispatch(setHouse(url))
 });
 export default connect(

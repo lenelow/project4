@@ -43,9 +43,9 @@ export const fetchingHouseSuccess = house => ({
   house
 });
 
-export const fetchAndHandleHouse = () => dispatch => {
+export const fetchAndHandleHouse = url => dispatch => {
   dispatch(fetchingHouse());
-  API.getHouse()
+  API.getHouseDetails(url)
     .then(res => {
       dispatch(fetchingHouseSuccess(res.data));
     })
@@ -53,3 +53,8 @@ export const fetchAndHandleHouse = () => dispatch => {
       dispatch(fetchingHouseError(err));
     });
 };
+
+export const setHouse = url => ({
+  type: types.SET_HOUSE,
+  url
+});

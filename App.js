@@ -1,4 +1,4 @@
-import { createStackNavigator } from "react-navigation";
+import { StackNavigator } from "react-navigation";
 import HomePage from "./components/HomePage";
 import HouseIndex from "./components/HouseIndex";
 import House from "./components/House";
@@ -12,7 +12,7 @@ import { AppRegistry } from "react-native";
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 
-const Routes = createStackNavigator({
+const Routes = StackNavigator({
   Home: { screen: HomePage },
   Houses: { screen: HouseIndex },
   House: { screen: House },

@@ -7,7 +7,7 @@ class House extends Component {
     super(props);
   }
   componentDidMount() {
-    this.props.fetchAndHandleHouse(this.props.match.params.id);
+    this.props.fetchAndHandleHouse(this.props.url);
   }
 
   render() {
@@ -26,7 +26,8 @@ class House extends Component {
   }
 }
 const mapStateToProps = ({ houses }) => ({
-  house: houses.house
+  house: houses.house,
+  url: houses.url
 });
 
 const mapDispatchToProps = dispatch => ({

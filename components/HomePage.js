@@ -29,11 +29,11 @@ export default class HomePage extends Component {
           style={styles.TouchableOpacity}
         >
           <LinearGradient
-            colors={["#fe8c00", "#f83600", "#fe8c00"]}
+            colors={["#1FE1FF", "#f83600", "#fe8c00"]}
             style={styles.LinearGradientStyle}
             start={{ x: 0, y: 1 }}
             end={{ x: 1, y: 0.9 }}
-            locations={[0, 0.3, 0.9]}
+            locations={[0, 0.6, 0.9]}
           >
             <Text style={styles.buttonText}>Who's Who?</Text>
           </LinearGradient>

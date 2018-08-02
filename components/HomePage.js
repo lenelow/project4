@@ -3,9 +3,10 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View,
-  TouchableOpacity
+  TouchableOpacity,
+  View
 } from "react-native";
+import { Header, Container, Title } from "native-base";
 
 export default class HomePage extends Component {
   static navigationOptions = {
@@ -14,48 +15,47 @@ export default class HomePage extends Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
-        <View style={styles.intro}>
-          <Text style={{ fontSize: 50 }}>ASOIAF</Text>
-          <Text style={{ fontSize: 15 }}>
-            A Searchable Overview Involving All Families
-          </Text>
-        </View>
-        <View style={styles.container}>
+      <Container style={styles.container}>
+        <Header>
+          <Title style={styles.title}>ASOIAF</Title>
+        </Header>
+        <Text style={styles.text}>
+          A Searchable Overview Involving All Families
+        </Text>
+        <View>
           <TouchableOpacity
             style={styles.button}
             onPress={() => navigate("Houses")}
           >
-            <Text> Who's Who? </Text>
+            <Text style={styles.buttonText}> Who's Who? </Text>
           </TouchableOpacity>
-          <View style={[styles.countContainer]}>
-            <Text style={[styles.countText]} />
-          </View>
         </View>
-      </View>
+      </Container>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  intro: {
-    flex: 1,
-    alignItems: "center",
-    paddingTop: 60
-  },
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    paddingHorizontal: 10
-  },
   button: {
-    alignItems: "center",
     backgroundColor: "#91AEBF",
-    paddingHorizontal: 5,
-    paddingVertical: 10
+    paddingVertical: 20,
+    alignItems: "center",
+    marginHorizontal: 45,
+    marginTop: 200,
+    marginBottom: -30,
+    borderRadius: 15
   },
-  countText: {
-    color: "#FF00FF"
+  buttonText: {
+    fontSize: 22
+  },
+  title: {
+    fontSize: 50,
+    marginBottom: -30
+  },
+  text: {
+    marginVertical: 30,
+    marginHorizontal: 27,
+    fontSize: 16
   }
 });
 

@@ -32,7 +32,6 @@ class HouseIndex extends Component {
   render() {
     return (
       <View style={styles.list}>
-        <Text>Houses</Text>
         <ScrollView automaticallyAdjustContentInsets={false}>
           {this.props.houses.map(house => (
             <TouchableHighlight onPress={() => this.navigateToHouse(house.url)}>

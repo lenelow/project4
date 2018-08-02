@@ -17,7 +17,7 @@ export const fetchingHousesSuccess = houses => ({
 
 export const fetchAndHandleHouses = (
   pageNumber = 1,
-  pageSize = 14
+  pageSize = 18
 ) => dispatch => {
   dispatch(fetchingHouses());
   API.getHouses(pageNumber, pageSize)

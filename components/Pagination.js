@@ -1,28 +1,33 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../actions/paginator";
-import { View, Text } from "react-native";
-import { Button } from "native-base";
+import {
+  View,
+  Text,
+  AppRegistry,
+  StyleSheet,
+  TouchableOpacity
+} from "react-native";
 
 class Pagination extends Component {
   back = () => {
     const { pageNumber } = this.props;
     const prevPage = pageNumber - 1;
-    this.props.handlePagination(prevPage, 14);
+    this.props.handlePagination(prevPage, 18);
   };
 
   advance = () => {
     const { pageNumber } = this.props;
     const nextPage = pageNumber + 1;
-    this.props.handlePagination(nextPage, 14);
+    this.props.handlePagination(nextPage, 18);
   };
 
   left() {
     return (
       <View disabled={this.props.page === 1 ? "disabled" : ""}>
-        <Button onPress={this.back}>
-          <Text>Symbol</Text>
-        </Button>
+        <TouchableOpacity style={styles.backButton} onPress={this.back}>
+          <Text>Prev</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -34,18 +39,18 @@ class Pagination extends Component {
 
     return (
       <View disabled={end}>
-        <Button onPress={this.advance}>
-          <Text>Symbol</Text>
-        </Button>
+        <TouchableOpacity style={styles.forwardButton} onPress={this.advance}>
+          <Text>Next</Text>
+        </TouchableOpacity>
       </View>
     );
   }
 
   render() {
     return (
-      <View>
+      <View style={styles.paginationButtons}>
         {this.left()}
-        <Text>Page {this.props.pageNumber}</Text>
+        <Text style={styles.page}>Page {this.props.pageNumber}</Text>
         {this.right()}
       </View>
     );
@@ -65,3 +70,28 @@ export default connect(
   mapStateToProps,
   actions
 )(Pagination);
+
+const styles = StyleSheet.create({
+  paginationButtons: {
+    flexWrap: "wrap",
+    alignItems: "flex-start",
+    flexDirection: "row",
+    marginTop: 12
+  },
+  backButton: {
+    backgroundColor: "#91AEBF",
+    padding: 5,
+    borderRadius: 5
+  },
+  forwardButton: {
+    backgroundColor: "#91AEBF",
+    padding: 5,
+    borderRadius: 5
+  },
+  page: {
+    marginHorizontal: 7,
+    paddingTop: 5
+  }
+});
+
+AppRegistry.registerComponent("ASOIAF", () => Pagination);

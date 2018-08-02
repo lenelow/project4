@@ -12,8 +12,8 @@ class API {
   getHouseDetails() {
     return this.api.get(`/houses/${id}`);
   }
-  getHouses() {
-    return this.api.get("/houses?page=1&pageSize=20");
+  getHouses(pageNumber, pageSize) {
+    return this.api.get(`/houses?page=${pageNumber}&pageSize=${pageSize}`);
   }
 }
 

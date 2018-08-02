@@ -3,6 +3,7 @@ import * as types from "../actions/types";
 const initialState = {
   houses: [],
   house: null,
+  url: "",
   loading: false
 };
 
@@ -29,6 +30,11 @@ export default (state = initialState, action) => {
         ...state,
         house: action.house,
         loading: false
+      };
+    case types.SET_HOUSE:
+      return {
+        ...state,
+        url: action.url
       };
     default: {
       return state;

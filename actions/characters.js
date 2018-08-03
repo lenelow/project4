@@ -10,7 +10,7 @@ export const fetchingCharactersError = error => ({
   error
 });
 
-export const fetchingHousesSuccess = characters => ({
+export const fetchingCharactersSuccess = characters => ({
   type: types.FETCHING_CHARACTERS_SUCCESS,
   characters
 });

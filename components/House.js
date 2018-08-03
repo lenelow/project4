@@ -18,19 +18,24 @@ class House extends Component {
     if (!this.props.house) {
       return (
         <View>
-          <Text>laoding</Text>
+          <Text>loading</Text>
         </View>
       );
     }
     return (
       <View>
-        <Text>{this.props.house.name}</Text>
-        <Text>{this.props.house.region}</Text>
-        <Text>{this.props.house.coatOfArms}</Text>
+        <Text style={{ textAlign: "center", fontSize: 20, marginVertical: 5 }}>
+          {this.props.house.name}
+        </Text>
+        <Text style={{ marginVertical: 5, marginLeft: 10, fontSize: 15 }}>
+          <Text style={{ fontWeight: "bold" }}>Region: </Text>
+          {this.props.house.region}
+        </Text>
+        <Text style={{ marginVertical: 5, marginLeft: 10, fontSize: 15 }}>
+          <Text style={{ fontWeight: "bold" }}>Sigil: </Text>
+          {this.props.house.coatOfArms}
+        </Text>
         <Text>{this.props.house.words}</Text>
-        <Text>{this.props.house.currentLord}</Text>
-        <Text>{this.props.house.heir}</Text>
-        <Text>{this.props.house.overlord}</Text>
         <Text>{this.props.house.ancestralWeapons}</Text>
       </View>
     );

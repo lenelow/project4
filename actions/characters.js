@@ -1,6 +1,34 @@
 import * as types from "./types";
 import API from "../utils/api";
 
+export const fetchingCharacters = () => ({
+  type: types.FETCHING_CHARACTERS
+});
+
+export const fetchingCharactersError = error => ({
+  type: types.FETCHING_CHARACTERS_ERROR,
+  error
+});
+
+export const fetchingCharactersSuccess = characters => ({
+  type: types.FETCHING_CHARACTERS_SUCCESS,
+  characters
+});
+
+export const fetchAndHandleCharacters = (
+  pageNumber = 1,
+  pageSize = 14
+) => dispatch => {
+  dispatch(fetchingCharacters());
+  API.getCharacters(pageNumber, pageSize)
+    .then(res => {
+      dispatch(fetchingCharactersSuccess(res.data));
+    })
+    .catch(err => {
+      dispatch(fetchingCharactersError(err));
+    });
+};
+
 export const fetchingCharacter = () => ({
   type: types.FETCHING_CHARACTER
 });
@@ -15,9 +43,9 @@ export const fetchingCharacterSuccess = character => ({
   character
 });
 
-export const fetchAndHandleCharacter = () => dispatch => {
+export const fetchAndHandleCharacter = url => dispatch => {
   dispatch(fetchingCharacter());
-  API.getCharacter()
+  API.getCharacterDetails(url)
     .then(res => {
       dispatch(fetchingCharacterSuccess(res.data));
     })
@@ -25,3 +53,8 @@ export const fetchAndHandleCharacter = () => dispatch => {
       dispatch(fetchingCharacterError(err));
     });
 };
+
+export const setCharacter = url => ({
+  type: types.SET_CHARACTER,
+  url
+});

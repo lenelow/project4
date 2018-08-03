@@ -13,13 +13,13 @@ class Pagination extends Component {
   back = () => {
     const { pageNumber } = this.props;
     const prevPage = pageNumber - 1;
-    this.props.handlePagination(prevPage, 18);
+    this.props.handlePagination(prevPage, 14);
   };
 
   advance = () => {
     const { pageNumber } = this.props;
     const nextPage = pageNumber + 1;
-    this.props.handlePagination(nextPage, 18);
+    this.props.handlePagination(nextPage, 14);
   };
 
   left() {
@@ -57,10 +57,11 @@ class Pagination extends Component {
   }
 }
 
-const mapStateToProps = ({ pagination, houses }) => {
+const mapStateToProps = ({ pagination, houses, characters }) => {
   const { pageSize, pageNumber } = pagination;
   return {
     houses: houses.houses,
+    characters: characters.characters,
     pageSize,
     pageNumber
   };

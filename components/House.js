@@ -5,7 +5,7 @@ import { fetchAndHandleHouses } from "../actions/houses";
 
 class House extends Component {
   static navigationOptions = {
-    title: "Name of Character"
+    title: "House Details"
   };
   constructor(props) {
     super(props);
@@ -24,7 +24,14 @@ class House extends Component {
     }
     return (
       <View>
-        <Text style={{ textAlign: "center", fontSize: 20, marginVertical: 5 }}>
+        <Text
+          style={{
+            textAlign: "center",
+            fontSize: 20,
+            marginTop: 5,
+            marginBottom: 10
+          }}
+        >
           {this.props.house.name}
         </Text>
         <Text style={{ marginVertical: 5, marginLeft: 10, fontSize: 15 }}>
@@ -35,7 +42,10 @@ class House extends Component {
           <Text style={{ fontWeight: "bold" }}>Sigil: </Text>
           {this.props.house.coatOfArms}
         </Text>
-        <Text>{this.props.house.words}</Text>
+        <Text style={{ marginVertical: 5, marginLeft: 10, fontSize: 15 }}>
+          <Text style={{ fontWeight: "bold" }}>Words: </Text>
+          {this.props.house.words}
+        </Text>
         <Text>{this.props.house.ancestralWeapons}</Text>
       </View>
     );

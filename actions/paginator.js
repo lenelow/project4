@@ -1,8 +1,10 @@
 import * as types from "./types";
 import { fetchAndHandleHouses } from "./houses";
+import { fetchAndHandleCharacters } from "./characters";
 
 export const handlePagination = (pageNumber = 1, pageSize = 18) => dispatch => {
   dispatch(fetchAndHandleHouses(pageNumber, pageSize));
+  dispatch(fetchAndHandleCharacters(pageNumber, pageSize));
   dispatch(setPagination(pageNumber, pageSize));
 };
 

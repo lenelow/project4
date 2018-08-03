@@ -15,7 +15,18 @@ export default (state = initialState, action) => {
     case types.FETCHING_CHARACTER_SUCCESS:
       return {
         ...state,
-        houses: action.character,
+        character: action.character,
+        loading: false
+      };
+    case types.FETCHING_CHARACTERS:
+      return {
+        ...state,
+        loading: true
+      };
+    case types.FETCHING_CHARACTERS_SUCCESS:
+      return {
+        ...state,
+        characters: action.characters,
         loading: false
       };
     default: {

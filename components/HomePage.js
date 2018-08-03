@@ -48,14 +48,13 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 30,
     alignItems: "center",
-    backgroundColor: "#C4E3E8"
+    backgroundColor: "#CAD5D4"
   },
   header: {
-    backgroundColor: "white",
     paddingBottom: -20,
     borderBottomWidth: -1,
     textAlign: "center",
-    backgroundColor: "#C4E3E8"
+    backgroundColor: "#CAD5D4"
   },
   LinearGradientStyle: {
     height: 20,

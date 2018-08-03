@@ -17,7 +17,7 @@ export const fetchingCharactersSuccess = characters => ({
 
 export const fetchAndHandleCharacters = (
   pageNumber = 1,
-  pageSize = 18
+  pageSize = 14
 ) => dispatch => {
   dispatch(fetchingCharacters());
   API.getCharacters(pageNumber, pageSize)

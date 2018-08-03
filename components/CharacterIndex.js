@@ -37,9 +37,9 @@ class CharacterIndex extends Component {
               <View>
                 <Text
                   style={{
-                    fontSize: 20,
+                    fontSize: 25,
                     textDecorationLine: "underline",
-                    lineHeight: 30
+                    lineHeight: 35
                   }}
                 >
                   {character.aliases}
@@ -59,9 +59,9 @@ class CharacterIndex extends Component {
         <View>
           <Text
             style={{
-              fontSize: 20,
+              fontSize: 25,
               textDecorationLine: "underline",
-              lineHeight: 30
+              lineHeight: 35
             }}
           >
             {item.aliases}

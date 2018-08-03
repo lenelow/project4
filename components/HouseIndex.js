@@ -38,9 +38,9 @@ class HouseIndex extends Component {
               <View>
                 <Text
                   style={{
-                    fontSize: 20,
+                    fontSize: 25,
                     textDecorationLine: "underline",
-                    lineHeight: 30
+                    lineHeight: 35
                   }}
                 >
                   {house.name}
@@ -60,9 +60,9 @@ class HouseIndex extends Component {
         <View>
           <Text
             style={{
-              fontSize: 20,
+              fontSize: 25,
               textDecorationLine: "underline",
-              lineHeight: 30
+              lineHeight: 35
             }}
           >
             {item.name}

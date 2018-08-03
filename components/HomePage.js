@@ -47,37 +47,48 @@ const styles = StyleSheet.create({
   MainContainer: {
     flex: 1,
     paddingTop: 30,
-    alignItems: "center"
+    alignItems: "center",
+    backgroundColor: "#C4E3E8"
   },
   header: {
     backgroundColor: "white",
     paddingBottom: -20,
-    borderBottomWidth: -1
+    borderBottomWidth: -1,
+    textAlign: "center",
+    backgroundColor: "#C4E3E8"
   },
   LinearGradientStyle: {
     height: 20,
-    paddingLeft: 15,
-    paddingRight: 15,
-    borderRadius: 5,
+    paddingLeft: 25,
+    paddingRight: 25,
+    borderRadius: 30,
     marginVertical: 160,
     flex: 1,
-    justifyContent: "center"
+    justifyContent: "center",
+    shadowOffset: {
+      width: 8,
+      height: 10
+    },
+    shadowColor: "grey",
+    shadowOpacity: 1.0
   },
   buttonText: {
     fontSize: 20,
     textAlign: "center",
     margin: 7,
-    color: "#280857",
-    backgroundColor: "transparent"
+    color: "black",
+    backgroundColor: "transparent",
+    fontWeight: "bold"
   },
   title: {
-    fontSize: 50
+    fontSize: 40
   },
   TouchableOpacity: {
     flex: 1,
     justifyContent: "center",
     paddingVertical: 20,
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
+    borderBottomColor: "black"
   },
   text: {
     marginVertical: 30,

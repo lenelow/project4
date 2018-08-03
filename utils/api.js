@@ -15,6 +15,9 @@ class API {
   getHouses(pageNumber, pageSize) {
     return this.api.get(`/houses?page=${pageNumber}&pageSize=${pageSize}`);
   }
+  getCharacters(pageNumber, pageSize) {
+    return this.api.get(`/characters?page=${pageNumber}&pageSize=${pageSize}`);
+  }
 }
 
 export default new API();

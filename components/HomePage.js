@@ -43,7 +43,7 @@ export default class HomePage extends Component {
               <Text style={styles.buttonText}>Houses</Text>
             </LinearGradient>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigate("Characters")}>
             <LinearGradient
               colors={["#1FE1FF", "#f83600", "#fe8c00"]}
               style={styles.LinearGradientStyle}

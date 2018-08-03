@@ -8,33 +8,32 @@ import {
   TouchableHighlight
 } from "react-native";
 import { connect } from "react-redux";
-import { fetchAndHandleHouses, setHouse } from "../actions/houses";
+import { fetchAndHandleCharacters, setCharacter } from "../actions/characters";
 import Pagination from "./Pagination";
 
-class HouseIndex extends Component {
-  static navigationOptions = {
-    title: "Houses of Westeros"
-  };
+class CharacterIndex extends Component {
   constructor() {
     super();
   }
 
   componentDidMount() {
-    this.props.fetchAndHandleHouses();
+    this.props.fetchAndHandleCharacters();
   }
 
-  navigateToHouse(url) {
+  navigateToCharacter(url) {
     const { navigate } = this.props.navigation;
-    this.props.setHouse(url);
-    navigate("House");
+    this.props.setCharacter(url);
+    navigate("Character");
   }
 
   render() {
     return (
       <View style={styles.list}>
         <ScrollView automaticallyAdjustContentInsets={false}>
-          {this.props.houses.map(house => (
-            <TouchableHighlight onPress={() => this.navigateToHouse(house.url)}>
+          {this.props.characters.map(character => (
+            <TouchableHighlight
+              onPress={() => this.navigateToCharacter(character.url)}
+            >
               <View>
                 <Text
                   style={{
@@ -43,7 +42,7 @@ class HouseIndex extends Component {
                     lineHeight: 35
                   }}
                 >
-                  {house.name}
+                  {character.aliases}
                 </Text>
               </View>
             </TouchableHighlight>
@@ -56,7 +55,7 @@ class HouseIndex extends Component {
 
   renderItem({ item, index }) {
     return (
-      <TouchableHighlight onPress={() => this.props.navigation("House")}>
+      <TouchableHighlight onPress={() => this.props.navigation("Character")}>
         <View>
           <Text
             style={{
@@ -65,7 +64,7 @@ class HouseIndex extends Component {
               lineHeight: 35
             }}
           >
-            {item.name}
+            {item.aliases}
           </Text>
         </View>
       </TouchableHighlight>
@@ -73,19 +72,19 @@ class HouseIndex extends Component {
   }
 }
 
-const mapStateToProps = ({ houses }) => ({
-  houses: houses.houses,
-  url: houses.url
+const mapStateToProps = ({ characters }) => ({
+  characters: characters.characters,
+  url: characters.url
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchAndHandleHouses: () => dispatch(fetchAndHandleHouses()),
-  setHouse: url => dispatch(setHouse(url))
+  fetchAndHandleCharacters: () => dispatch(fetchAndHandleCharacters()),
+  setCharacter: url => dispatch(setCharacter(url))
 });
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HouseIndex);
+)(CharacterIndex);
 
 const styles = StyleSheet.create({
   list: {
@@ -93,4 +92,4 @@ const styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent("ASOIAF", () => HouseIndex);
+AppRegistry.registerComponent("ASOIAF", () => CharacterIndex);

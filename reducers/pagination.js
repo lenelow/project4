@@ -2,7 +2,7 @@ import * as types from "../actions/types";
 
 const initialState = {
   pageNumber: 1,
-  pageSize: 18
+  pageSize: 14
 };
 
 export default (state = initialState, action) => {

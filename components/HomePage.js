@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Header, Container, Title } from "native-base";
+import { Container } from "native-base";
 import {
   AppRegistry,
   StyleSheet,
@@ -17,9 +17,7 @@ export default class HomePage extends Component {
     const { navigate } = this.props.navigation;
     return (
       <Container style={styles.MainContainer}>
-        <Header style={styles.header}>
-          <Title style={styles.title}>ASOIAF</Title>
-        </Header>
+        <Text style={styles.header}>ASOIAF</Text>
         <Text style={styles.text}>
           A Searchable Overview Involving All Families
         </Text>
@@ -33,7 +31,7 @@ export default class HomePage extends Component {
           <TouchableOpacity
             activeOpacity={0.5}
             onPress={() => navigate("Houses")}
-            style={{ marginBottom: 10, marginTop: 100 }}
+            style={{ marginBottom: 15, marginTop: 100 }}
           >
             <LinearGradient
               colors={["#1FE1FF", "#f83600", "#fe8c00"]}
@@ -71,7 +69,16 @@ const styles = StyleSheet.create({
     paddingBottom: -20,
     borderBottomWidth: -1,
     textAlign: "center",
-    backgroundColor: "#C4E3E8"
+    marginBottom: 30,
+    height: 100,
+    width: 310,
+    margin: 0,
+    padding: 0,
+    marginRight: 0,
+    backgroundColor: "#C4E3E8",
+    fontSize: 40,
+    fontFamily: "Zapfino",
+    fontWeight: "bold"
   },
   LinearGradientStyle: {
     shadowOffset: {
@@ -96,11 +103,7 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     fontWeight: "bold"
   },
-  title: {
-    fontSize: 40
-  },
   text: {
-    marginVertical: 30,
     marginHorizontal: 27,
     fontSize: 16
   }

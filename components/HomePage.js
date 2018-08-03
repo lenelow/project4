@@ -23,21 +23,37 @@ export default class HomePage extends Component {
         <Text style={styles.text}>
           A Searchable Overview Involving All Families
         </Text>
-        <TouchableOpacity
-          activeOpacity={0.5}
-          onPress={() => navigate("Houses")}
-          style={styles.TouchableOpacity}
+        <View
+          style={{
+            flexWrap: "wrap",
+            alignItems: "flex-start",
+            flexDirection: "column"
+          }}
         >
-          <LinearGradient
-            colors={["#1FE1FF", "#f83600", "#fe8c00"]}
-            style={styles.LinearGradientStyle}
-            start={{ x: 0, y: 1 }}
-            end={{ x: 1, y: 0.9 }}
-            locations={[0.2, 0.6, 0.9]}
+          <TouchableOpacity
+            activeOpacity={0.5}
+            onPress={() => navigate("Houses")}
+            style={{ marginBottom: 10, marginTop: 100 }}
           >
-            <Text style={styles.buttonText}>Who's Who?</Text>
-          </LinearGradient>
-        </TouchableOpacity>
+            <LinearGradient
+              colors={["#1FE1FF", "#f83600", "#fe8c00"]}
+              style={styles.LinearGradientStyle}
+              start={{ x: 0, y: 1 }}
+              end={{ x: 1, y: 0.9 }}
+              locations={[0.2, 0.6, 0.9]}
+            >
+              <Text style={styles.buttonText}>Houses</Text>
+            </LinearGradient>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <LinearGradient
+              colors={["#1FE1FF", "#f83600", "#fe8c00"]}
+              style={styles.LinearGradientStyle}
+            >
+              <Text style={styles.buttonText}>People</Text>
+            </LinearGradient>
+          </TouchableOpacity>
+        </View>
       </Container>
     );
   }
@@ -58,37 +74,30 @@ const styles = StyleSheet.create({
     backgroundColor: "#C4E3E8"
   },
   LinearGradientStyle: {
-    height: 20,
-    paddingLeft: 25,
-    paddingRight: 25,
-    borderRadius: 30,
-    marginVertical: 160,
-    flex: 1,
-    justifyContent: "center",
     shadowOffset: {
       width: 8,
       height: 10
     },
     shadowColor: "grey",
-    shadowOpacity: 1.0
+    shadowOpacity: 1.0,
+    borderRadius: 30,
+    paddingVertical: 10,
+    paddingHorizontal: 20
+  },
+  TouchableOpacity: {
+    flex: 1,
+    justifyContent: "center",
+    marginBottom: 300
   },
   buttonText: {
     fontSize: 20,
     textAlign: "center",
-    margin: 7,
     color: "black",
     backgroundColor: "transparent",
     fontWeight: "bold"
   },
   title: {
     fontSize: 40
-  },
-  TouchableOpacity: {
-    flex: 1,
-    justifyContent: "center",
-    paddingVertical: 20,
-    paddingHorizontal: 20,
-    borderBottomColor: "black"
   },
   text: {
     marginVertical: 30,

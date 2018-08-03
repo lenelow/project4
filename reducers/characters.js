@@ -1,7 +1,9 @@
 import * as types from "../actions/types";
 
 const initialState = {
+  characters: [],
   character: null,
+  url: "",
   loading: false
 };
 
@@ -28,6 +30,11 @@ export default (state = initialState, action) => {
         ...state,
         characters: action.characters,
         loading: false
+      };
+    case types.SET_CHARACTER:
+      return {
+        ...state,
+        url: action.url
       };
     default: {
       return state;

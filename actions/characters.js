@@ -43,9 +43,9 @@ export const fetchingCharacterSuccess = character => ({
   character
 });
 
-export const fetchAndHandleCharacter = () => dispatch => {
+export const fetchAndHandleCharacter = url => dispatch => {
   dispatch(fetchingCharacter());
-  API.getCharacter()
+  API.getCharacterDetails(url)
     .then(res => {
       dispatch(fetchingCharacterSuccess(res.data));
     })
@@ -53,3 +53,8 @@ export const fetchAndHandleCharacter = () => dispatch => {
       dispatch(fetchingCharacterError(err));
     });
 };
+
+export const setCharacter = url => ({
+  type: types.SET_CHARACTER,
+  url
+});

@@ -35,7 +35,10 @@ class House extends Component {
           <Text style={{ fontWeight: "bold" }}>Sigil: </Text>
           {this.props.house.coatOfArms}
         </Text>
-        <Text>{this.props.house.words}</Text>
+        <Text style={{ marginVertical: 5, marginLeft: 10, fontSize: 15 }}>
+          <Text style={{ fontWeight: "bold" }}>Words: </Text>
+          {this.props.house.words}
+        </Text>
         <Text>{this.props.house.ancestralWeapons}</Text>
       </View>
     );

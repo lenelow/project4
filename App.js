@@ -3,6 +3,7 @@ import HomePage from "./components/HomePage";
 import HouseIndex from "./components/HouseIndex";
 import House from "./components/House";
 import Character from "./components/Character";
+import NotableMembers from "./components/NotableMembers";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import reduxThunk from "redux-thunk";
@@ -16,6 +17,7 @@ const Routes = createStackNavigator({
   Home: { screen: HomePage },
   Houses: { screen: HouseIndex },
   House: { screen: House },
+  Members: { screen: NotableMembers },
   Character: { screen: Character }
 });
 

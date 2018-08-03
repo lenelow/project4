@@ -18,6 +18,11 @@ export default (state = initialState, action) => {
         houses: action.character,
         loading: false
       };
+    case types.SET_HOUSE:
+      return {
+        ...state,
+        swornMembers: action.swornMembers
+      };
     default: {
       return state;
     }

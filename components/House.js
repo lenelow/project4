@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, AppRegistry } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  AppRegistry,
+  TouchableHighlight
+} from "react-native";
 import { connect } from "react-redux";
 import { fetchAndHandleHouses } from "../actions/houses";
 
@@ -15,6 +21,7 @@ class House extends Component {
   }
 
   render() {
+    const { navigate } = this.props.navigation;
     if (!this.props.house) {
       return (
         <View>
@@ -39,7 +46,9 @@ class House extends Component {
           <Text style={{ fontWeight: "bold" }}>Words: </Text>
           {this.props.house.words}
         </Text>
-        <Text>{this.props.house.ancestralWeapons}</Text>
+        <TouchableHighlight onPress={() => navigate("Members")}>
+          <Text>Notable Members</Text>
+        </TouchableHighlight>
       </View>
     );
   }

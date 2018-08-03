@@ -25,3 +25,33 @@ export const fetchAndHandleCharacter = () => dispatch => {
       dispatch(fetchingCharacterError(err));
     });
 };
+
+export const fetchingCharacters = () => ({
+  type: types.FETCHING_CHARACTERS
+});
+
+export const fetchingCharactersError = error => ({
+  type: types.FETCHING_CHARACTERS_ERROR,
+  error
+});
+
+export const fetchingCharactersSuccess = characters => ({
+  type: types.FETCHING_CHARACTERS_SUCCESS,
+  characters
+});
+
+export const fetchAndHandleCharacters = () => dispatch => {
+  dispatch(fetchingCharacters());
+  API.getCharacters()
+    .then(res => {
+      dispatch(fetchingCharactersSuccess(res.data));
+    })
+    .catch(err => {
+      dispatch(fetchingCharactersError(err));
+    });
+};
+
+export const setCharacters = swornMembers => ({
+  type: types.SET_CHARACTERS,
+  swornMembers
+});
